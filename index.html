@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Family Book</title>
+        <link rel="icon" href="family.jpg">
+    </head>
+    <body>
+        <center>
+            <h1>My Family Book</h1>
+            <img id="image" src="family.jpg">
+            <h2 id="name">Family Book</h2>
+            <div>
+                <button onclick="previous()">&larr;</button>
+                <button onclick="next()">&rarr;</button>
+            </div>
+        </center>
+        <style>
+            button {
+                background-color: black;
+                color: white;
+                width: 245px;
+                cursor: pointer;
+                border-radius: 5px;
+                font-size: 30px;
+            }
+
+            img {
+                height: 500px;
+                width: 500px;
+                border-radius: 50px;
+            }
+
+            h1, h2 {
+                color: green;
+                font-family: sans-serif;
+            }
+        </style>
+        <script>
+            var images = ["family.jpg", "grand-father.png", "grandmother.jpg", "father.jpg", "mother.jpg", "myself.png"];
+            var names = ["My family book", "K.N Verma", "Gyanti Devi", "Prakash Kashyap", "Archana Priti", "Anjor Srivastava(myself)"]
+            var i = 0;
+            function next() {
+                i++;
+                if (i > 5) {
+                    i = 0;
+                }
+                document.getElementById("image").src = images[i];
+                document.getElementById("name").innerHTML = names[i];
+            }
+            function previous() {
+                i--;
+                if (i < 0) {
+                    i = 5;
+                }
+                document.getElementById("image").src = images[i];
+                document.getElementById("name").innerHTML = names[i];
+            }
+        </script>
+    </body>
+</html>
